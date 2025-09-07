@@ -1,0 +1,157 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000019eadbaa4a0 .scope module, "tb_nand" "tb_nand" 2 2;
+ .timescale -9 -12;
+v0000019eadbff340_0 .var "a", 0 0;
+v0000019eadbff3e0_0 .var "b", 0 0;
+v0000019eadbffc00_0 .net "nand_and_out", 0 0, L_0000019eadc01840;  1 drivers
+v0000019eadc00740_0 .net "nand_nor_out", 0 0, L_0000019eadc014c0;  1 drivers
+v0000019eadbffe80_0 .net "nand_not_out", 0 0, L_0000019eadb9a110;  1 drivers
+v0000019eadc00ce0_0 .net "nand_or_out", 0 0, L_0000019eadc016f0;  1 drivers
+v0000019eadbff700_0 .net "nand_xnor_out", 0 0, L_0000019eadc01d80;  1 drivers
+v0000019eadc00d80_0 .net "nand_xor_out", 0 0, L_0000019eadc01680;  1 drivers
+S_0000019eadbaa630 .scope module, "u1" "nand_not" 2 8, 3 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "y";
+L_0000019eadb9a110 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff340_0, C4<1>, C4<1>;
+v0000019eadb9b640_0 .net "a", 0 0, v0000019eadbff340_0;  1 drivers
+v0000019eadb9b5a0_0 .net "y", 0 0, L_0000019eadb9a110;  alias, 1 drivers
+S_0000019eadb5d210 .scope module, "u2" "nand_and" 2 9, 4 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadb9a260 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff3e0_0, C4<1>, C4<1>;
+L_0000019eadc01840 .functor NAND 1, L_0000019eadb9a260, L_0000019eadb9a260, C4<1>, C4<1>;
+v0000019eadb9ac40_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadb9af60_0 .net "b", 0 0, v0000019eadbff3e0_0;  1 drivers
+v0000019eadb9baa0_0 .net "nand_out", 0 0, L_0000019eadb9a260;  1 drivers
+v0000019eadb9aec0_0 .net "y", 0 0, L_0000019eadc01840;  alias, 1 drivers
+S_0000019eadb5d3a0 .scope module, "u3" "nand_or" 2 10, 5 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc010d0 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff340_0, C4<1>, C4<1>;
+L_0000019eadc01ed0 .functor NAND 1, v0000019eadbff3e0_0, v0000019eadbff3e0_0, C4<1>, C4<1>;
+L_0000019eadc016f0 .functor NAND 1, L_0000019eadc010d0, L_0000019eadc01ed0, C4<1>, C4<1>;
+v0000019eadb9ba00_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadb9ad80_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadb9aba0_0 .net "na", 0 0, L_0000019eadc010d0;  1 drivers
+v0000019eadb9b0a0_0 .net "nb", 0 0, L_0000019eadc01ed0;  1 drivers
+v0000019eadb9b460_0 .net "y", 0 0, L_0000019eadc016f0;  alias, 1 drivers
+S_0000019eadb5bd80 .scope module, "u4" "nand_xor" 2 11, 6 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc01220 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff3e0_0, C4<1>, C4<1>;
+L_0000019eadc01370 .functor NAND 1, v0000019eadbff340_0, L_0000019eadc01220, C4<1>, C4<1>;
+L_0000019eadc01140 .functor NAND 1, v0000019eadbff3e0_0, L_0000019eadc01220, C4<1>, C4<1>;
+L_0000019eadc01680 .functor NAND 1, L_0000019eadc01370, L_0000019eadc01140, C4<1>, C4<1>;
+v0000019eadb9ace0_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadb9ae20_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadb9b3c0_0 .net "n1", 0 0, L_0000019eadc01220;  1 drivers
+v0000019eadb9b1e0_0 .net "n2", 0 0, L_0000019eadc01370;  1 drivers
+v0000019eadb9b280_0 .net "n3", 0 0, L_0000019eadc01140;  1 drivers
+v0000019eadb9b8c0_0 .net "y", 0 0, L_0000019eadc01680;  alias, 1 drivers
+S_0000019eadb5bf10 .scope module, "u5" "nand_xnor" 2 12, 7 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc01d80 .functor NAND 1, L_0000019eadc01920, L_0000019eadc01920, C4<1>, C4<1>;
+v0000019eadbffb60_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadc00f60_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadbff7a0_0 .net "xor_out", 0 0, L_0000019eadc01920;  1 drivers
+v0000019eadbff520_0 .net "y", 0 0, L_0000019eadc01d80;  alias, 1 drivers
+S_0000019eadba5800 .scope module, "u1" "nand_xor" 7 3, 6 1 0, S_0000019eadb5bf10;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc01290 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff3e0_0, C4<1>, C4<1>;
+L_0000019eadc01df0 .functor NAND 1, v0000019eadbff340_0, L_0000019eadc01290, C4<1>, C4<1>;
+L_0000019eadc01530 .functor NAND 1, v0000019eadbff3e0_0, L_0000019eadc01290, C4<1>, C4<1>;
+L_0000019eadc01920 .functor NAND 1, L_0000019eadc01df0, L_0000019eadc01530, C4<1>, C4<1>;
+v0000019eadb9b320_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadb9b500_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadb9b6e0_0 .net "n1", 0 0, L_0000019eadc01290;  1 drivers
+v0000019eadb9b780_0 .net "n2", 0 0, L_0000019eadc01df0;  1 drivers
+v0000019eadb9b820_0 .net "n3", 0 0, L_0000019eadc01530;  1 drivers
+v0000019eadb9b960_0 .net "y", 0 0, L_0000019eadc01920;  alias, 1 drivers
+S_0000019eadba5990 .scope module, "u6" "nand_nor" 2 13, 8 1 0, S_0000019eadbaa4a0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc014c0 .functor NAND 1, L_0000019eadc01f40, L_0000019eadc01f40, C4<1>, C4<1>;
+v0000019eadbff2a0_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadc00920_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadc00b00_0 .net "or_out", 0 0, L_0000019eadc01f40;  1 drivers
+v0000019eadbff840_0 .net "y", 0 0, L_0000019eadc014c0;  alias, 1 drivers
+S_0000019eadb9cd90 .scope module, "u1" "nand_or" 8 3, 5 1 0, S_0000019eadba5990;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "y";
+L_0000019eadc011b0 .functor NAND 1, v0000019eadbff340_0, v0000019eadbff340_0, C4<1>, C4<1>;
+L_0000019eadc01300 .functor NAND 1, v0000019eadbff3e0_0, v0000019eadbff3e0_0, C4<1>, C4<1>;
+L_0000019eadc01f40 .functor NAND 1, L_0000019eadc011b0, L_0000019eadc01300, C4<1>, C4<1>;
+v0000019eadbff5c0_0 .net "a", 0 0, v0000019eadbff340_0;  alias, 1 drivers
+v0000019eadbff0c0_0 .net "b", 0 0, v0000019eadbff3e0_0;  alias, 1 drivers
+v0000019eadc00c40_0 .net "na", 0 0, L_0000019eadc011b0;  1 drivers
+v0000019eadc009c0_0 .net "nb", 0 0, L_0000019eadc01300;  1 drivers
+v0000019eadbffac0_0 .net "y", 0 0, L_0000019eadc01f40;  alias, 1 drivers
+    .scope S_0000019eadbaa4a0;
+T_0 ;
+    %vpi_call 2 16 "$dumpfile", "wave.vcd" {0 0 0};
+    %vpi_call 2 17 "$dumpvars", 32'sb00000000000000000000000000000000, S_0000019eadbaa4a0 {0 0 0};
+    %vpi_call 2 19 "$display", "Time | A B | NOT AND OR XOR XNOR NOR" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019eadbff340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019eadbff3e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019eadbff340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019eadbff3e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019eadbff340_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000019eadbff3e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019eadbff340_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000019eadbff3e0_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0000019eadbaa4a0;
+T_1 ;
+    %vpi_call 2 30 "$monitor", "%4t | %b %b |  %b   %b   %b   %b    %b    %b", $time, v0000019eadbff340_0, v0000019eadbff3e0_0, v0000019eadbffe80_0, v0000019eadbffc00_0, v0000019eadc00ce0_0, v0000019eadc00d80_0, v0000019eadbff700_0, v0000019eadc00740_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 9;
+    "N/A";
+    "<interactive>";
+    "tb_nand.v";
+    "nand_not.v";
+    "nand_and.v";
+    "nand_or.v";
+    "nand_xor.v";
+    "nand_xnor.v";
+    "nand_nor.v";
