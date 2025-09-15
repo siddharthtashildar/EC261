@@ -1,5 +1,5 @@
 $date
-	Mon Sep 08 00:38:33 2025
+	Mon Sep 08 10:59:18 2025
 $end
 $version
 	Icarus Verilog
@@ -23,7 +23,7 @@ $upscope $end
 $scope module u2 $end
 $var wire 1 ' a $end
 $var wire 1 ( b $end
-$var wire 1 ) nand_out $end
+$var wire 1 ) nand_and_out $end
 $var wire 1 & y $end
 $upscope $end
 $scope module u3 $end

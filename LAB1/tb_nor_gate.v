@@ -14,6 +14,7 @@ module tb_nor_gate;
         a=1; b=0; #10;
         a=1; b=1; #10;
 
+        #10; 
         $finish;
     end
 endmodule

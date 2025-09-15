@@ -9,6 +9,8 @@ module tb_nand_gate;
         $dumpfile("wave.vcd");
         $dumpvars(0, tb_nand_gate);
 
+        $monitor("time=%0t A=%b B=%b Y=%b", $time, a, b, y);
+
         a=0; b=0; #10;
         a=0; b=1; #10;
         a=1; b=0; #10;
