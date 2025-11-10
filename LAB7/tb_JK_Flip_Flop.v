@@ -30,7 +30,7 @@ initial begin
     
     #10 reset = 0;
 
-    
+
     #10 J = 0; K = 0;  
     #10 J = 0; K = 1;  
     #10 J = 1; K = 0;  
