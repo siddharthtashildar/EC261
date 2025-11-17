@@ -10,8 +10,8 @@ module SISO (
         if (rst)
             shift_reg <= 4'b0000;
         else
-            shift_reg <= {shift_reg[2:0], serial_in};  // shift left
+            shift_reg <= {shift_reg[2:0], serial_in};  
     end
 
-    assign serial_out = shift_reg[3]; // MSB is output
+    assign serial_out = shift_reg[3]; 
 endmodule
